@@ -1,0 +1,24 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Página principal</title>
+    <link rel="icon" type="image/png" href="{% static 'favicon.png' %}">
+  </head>
+  <body>
+    <header>
+      <h1>Enlaces</h1>
+      <nav>
+        <ul>
+          <li><a href="{% url 'inicio' %}">Inicio</a></li>
+          <li><a href="{% url 'basedatos' %}">Administracion de BDD</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h2>Contenido principal</h2>
+      <p>Este es el contenido principal.</p>
+    </main>
+  </body>
+</html>
