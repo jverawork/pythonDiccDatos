@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'bootstrap5',
     'sistemas'
 ]
 
@@ -79,17 +80,20 @@ WSGI_APPLICATION = 'diccdatos.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
+    #'default': {
+    #    'ENGINE': 'django.db.backends.sqlite3',
+    #    'NAME': BASE_DIR / 'db.sqlite3',
+    #},
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    },
-    'diccdatoscon': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'diccdatosdb',
         'USER': 'udiccdatosdb',
         'PASSWORD': 'udiccdatosdb',
         'HOST': 'localhost',
         'PORT': '5432',
+        'OPTIONS': {
+            'options': '-c search_path=cmdb_owner' #esquema
+        }        
     }    
 }
 
@@ -140,3 +144,4 @@ TIME_ZONE = 'America/Guayaquil'
 
 # Redirect to home URL after login (Default redirects to /accounts/profile/)
 LOGIN_REDIRECT_URL = '/'
+

@@ -23,14 +23,14 @@ from django.views.generic import RedirectView #add URL maps to redirect the base
 
 from django.conf import settings
 from django.conf.urls.static import static
-
+from django.contrib.auth.decorators import login_required
 
 urlpatterns = [
-    #path('', views.inicio, name='inicio'),
-    path('', RedirectView.as_view(url='/bdd/', permanent=True)),
+    path('', login_required(views.inicio), name='inicio'),
+    #path('', RedirectView.as_view(url='/bdd/', permanent=True),name='inicio'),
     path('accounts/', include('django.contrib.auth.urls')),
     path('admin/', admin.site.urls),    
-    path('bdd/', views.basedatos, name='basedatos')
+    path('bdd/', login_required(views.basedatos), name='basedatos')
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

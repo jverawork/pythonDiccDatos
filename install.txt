@@ -1,0 +1,21 @@
+https://developer.mozilla.org/es/docs/Learn/Server-side/Django/Home_page
+https://programacionfacil.org/blog/django-el-uso-de-plantillas/
+https://programacionfacil.org/blog/creando-una-app-de-varias-url-con-django/
+https://code.visualstudio.com/docs/python/tutorial-django#_types-of-databases
+
+https://docs.djangoproject.com/en/2.2/topics/http/urls/
+
+https://www.w3schools.com/django/django_add_bootstrap5.php
+
+
+
+ .\diccdatos_desa\Scripts\activate.bat
+
+
+ python manage.py migrate auth
+ python manage.py createsuperuser --username=ujvera --email=jimmy.vera@iess.gob.ec #password insector
+ python manage.py migrate
+
+ http://127.0.0.1:8000/admin/logout/
+
+

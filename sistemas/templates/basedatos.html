@@ -1,31 +1,26 @@
+{% extends "base_generic.html" %}
+<!-- static -->
 {% load static %}
+<!-- content -->
+{% block content %}
 
-<!DOCTYPE html>
-<html lang="en-us" dir="ltr">
-    <head>
-        <title>Mi página web</title>
-        <!--link rel="stylesheet" href="/static/admin/css/base.css">
-        <link rel="stylesheet" href="/static/admin/css/dark_mode.css"-->
-        <link rel="icon" type="image/png" href="{% static 'favicon.png' %}">
-    </head>
-    <body>
-        <header>
-            <h1>Administracion de BDD</h1>
-            <nav>
-              <ul>
-                <li><a href="{% url 'inicio' %}">Inicio</a></li>
-              </ul>
-            </nav>
-        </header>      
-        <main>  
-            usuario:  {{ usuario }} 
-            {% for post in list_bdd %} 
-            <div>
-                <p> publicado: {{ post.published_date }}</p>
-                <h2><a href="">{{ post.title }}</a></h2>
-                <p>{{ post.text|linebreaksbr }}</p>
-            </div>
-            {% endfor %}
-        </main>
-    </body>
-</html>    
+    <header>
+        <h1>Administracion de BDD</h1>
+        <nav>
+            <ul>
+            <li><a href="{% url 'inicio' %}">Inicio</a></li>
+            </ul>
+        </nav>
+    </header>      
+    <main>  
+        usuario:  {{ usuario }} 
+        {% for bdd in list_bdd %} 
+        <div>
+            <p> publicado: {{ bdd.ID_BD }}</p>
+            <h2><a href="">{{ bdd.COD_BD }}</a></h2>
+            <p>{{ bdd.DESCRIPCION }}</p>
+        </div>
+        {% endfor %}
+    </main>
+{% endblock %}   
+
